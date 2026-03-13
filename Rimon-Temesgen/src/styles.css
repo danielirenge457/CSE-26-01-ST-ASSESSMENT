@@ -1,0 +1,298 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* App colors and fonts live here so they can be reused everywhere. */
+:root {
+  --brand-green: #99cc32;
+  --deep-green: #385723;
+  --success-green: #09b34b;
+  --page-bg: #ececec;
+  --error-red: red;
+  --muted-text: #a6a6a6;
+  --display-font: 'Agency FB', 'Arial Narrow', Arial, sans-serif;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  min-height: 100%;
+}
+
+/* Basic page defaults for the whole app. */
+body {
+  min-width: 320px;
+  font-family: 'Arial Narrow', Arial, sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.registration-page {
+  min-height: 100dvh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  background: var(--page-bg);
+}
+
+/* Left side with the logo and app name. */
+.brand-panel {
+  display: grid;
+  place-content: center;
+  gap: 18px;
+  padding: 24px;
+  text-align: center;
+  background: var(--brand-green);
+}
+
+.logo-wrap {
+  width: min(100%, 250px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: var(--page-bg);
+}
+
+.logo-image {
+  width: 195px;
+  max-width: 78%;
+  object-fit: contain;
+}
+
+.brand-title,
+.form-title,
+.form-label {
+  font-family: var(--display-font);
+  color: var(--deep-green);
+}
+
+.brand-title {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.65rem, 2.2vw, 2.5rem);
+  line-height: 1;
+}
+
+.form-panel {
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+}
+
+/* Main form layout on the right side. */
+.registration-form {
+  width: 100%;
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+.form-title {
+  margin: 0 0 10px;
+  text-align: center;
+  font-size: clamp(1.7rem, 2.3vw, 2.5rem);
+  line-height: 1;
+}
+
+.success-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 34px;
+  margin-bottom: 8px;
+  padding: 6px 12px;
+  background: var(--success-green);
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.success-close {
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px 12px;
+}
+
+/* Shared input/select field styling used by the form components. */
+.form-field {
+  display: grid;
+  grid-template-rows: auto minmax(46px, auto) 16px;
+}
+
+.field-span {
+  grid-column: 1 / -1;
+}
+
+.form-label {
+  margin-bottom: 4px;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.form-label em {
+  color: var(--error-red);
+  font-style: normal;
+}
+
+.form-control {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 14px;
+  border: 1.5px solid var(--brand-green);
+  background: transparent;
+  color: #222;
+  font-size: 0.95rem;
+  text-align: center;
+  outline: none;
+}
+
+.form-control::placeholder {
+  color: var(--muted-text);
+}
+
+.form-control.invalid {
+  border-color: var(--error-red);
+}
+
+.form-error {
+  display: block;
+  min-height: 16px;
+  margin-top: 2px;
+  color: var(--error-red);
+  font-size: 0.72rem;
+  text-align: right;
+}
+
+.select-wrap {
+  position: relative;
+}
+
+.select-wrap::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 12px solid var(--brand-green);
+  transform: translateY(-35%);
+  pointer-events: none;
+}
+
+select.form-control {
+  appearance: none;
+}
+
+.radio-group {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+}
+
+.radio-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--deep-green);
+}
+
+.radio-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.radio-mark {
+  width: 20px;
+  aspect-ratio: 1;
+  border: 3px solid var(--deep-green);
+  border-radius: 50%;
+  background: var(--page-bg);
+}
+
+.radio-option input:checked + .radio-mark {
+  background: var(--brand-green);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.submit-button {
+  width: min(100%, 338px);
+  min-height: 52px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--brand-green);
+  color: #fff;
+  font-size: 1.15rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+@media (max-width: 960px) {
+  /* On smaller screens the layout stacks into one column. */
+  .registration-page {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-panel {
+    padding: 20px;
+  }
+
+  .logo-wrap {
+    width: 190px;
+  }
+
+  .form-panel {
+    display: block;
+  }
+}
+
+@media (max-width: 640px) {
+  .form-panel {
+    padding: 18px;
+  }
+
+  .field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .radio-group {
+    justify-content: space-between;
+    padding-inline: 8px;
+  }
+
+  .actions {
+    justify-content: stretch;
+  }
+
+  .submit-button {
+    width: 100%;
+  }
+}
