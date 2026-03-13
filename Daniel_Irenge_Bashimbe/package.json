@@ -1,0 +1,27 @@
+{
+  "name": "cse-26-01-st-assessment",
+  "version": "1.0.0",
+  "description": "CSE-26-01-ST-ASSESSMENT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tech-refactory/CSE-26-01-ST-ASSESSMENT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/tech-refactory/CSE-26-01-ST-ASSESSMENT/issues"
+  },
+  "homepage": "https://github.com/tech-refactory/CSE-26-01-ST-ASSESSMENT#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongodb": "^7.1.0",
+    "mongoose": "^9.3.0"
+  }
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beneficiary Registration Form - FCA</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <main>
+      <section id="register" class="section">
+        <div class="container register-layout">
+          <aside class="register-brand">
+            <div class="fca-logo" aria-hidden="true">
+              <div class="fca-logo-ring">
+                <div class="fca-logo-banner">FCA</div>
+              </div>
+            </div>
+            <div class="register-brand-title">Refugee Support Program</div>
+          </aside>
+
+          <div class="register-form-panel">
+            <div class="section-head">
+              <h2 class="section-title">Beneficiary Registration Form</h2>
+            </div>
+
+            <!-- Success Alert -->
+            <div id="successAlert" class="alert alert-success" hidden>
+              <div class="alert-content">
+                <p>Beneficiary registered successfully!</p>
+                <button id="closeAlertBtn" class="alert-close" type="button">×</button>
+              </div>
+            </div>
+
+            <form id="beneficiaryForm" class="form-card" method="POST" action="/beneficiaries" novalidate>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="firstName">First Name <span class="req">*</span></label>
+                  <input
+                    id="firstName"
+                    name="firstName"
+                    type="text"
+                    autocomplete="given-name"
+                    placeholder="Enter your First name">
+                  <div class="error" data-error-for="firstName"></div>
+                </div>
+
+                <div class="field">
+                  <label for="lastName">Last name <span class="req">*</span></label>
+                  <input
+                    id="lastName"
+                    name="lastName"
+                    type="text"
+                    autocomplete="family-name"
+                    placeholder="Enter your Last name">
+                  <div class="error" data-error-for="lastName"></div>
+                </div>
+
+                <div class="field">
+                  <label for="dateOfBirth">Date of birth <span class="req">*</span></label>
+                  <input
+                    id="dateOfBirth"
+                    name="dateOfBirth"
+                    type="date"
+                    placeholder="YYYY / MM / DD">
+                  <div class="error" data-error-for="dateOfBirth"></div>
+                </div>
+
+                <div class="field">
+                  <label for="placeOfBirth">Place of Birth <span class="req">*</span></label>
+                  <input
+                    id="placeOfBirth"
+                    name="placeOfBirth"
+                    type="text"
+                    autocomplete="address-level2"
+                    placeholder="Enter your place of residence">
+                  <div class="error" data-error-for="placeOfBirth"></div>
+                </div>
+
+                <div class="field">
+                  <label>Gender <span class="req">*</span></label>
+                  <div class="radio-box" role="radiogroup" aria-label="Gender">
+                    <label class="radio-option">
+                      <input type="radio" name="gender" value="Male" checked>
+                      <span>Male</span>
+                    </label>
+                    <label class="radio-option">
+                      <input type="radio" name="gender" value="Female">
+                      <span>Female</span>
+                    </label>
+                  </div>
+                  <div class="error" data-error-for="gender"></div>
+                </div>
+
+                <div class="field">
+                  <label for="dateOfRegistration">Date of registration <span class="req">*</span></label>
+                  <input
+                    id="dateOfRegistration"
+                    name="dateOfRegistration"
+                    type="date"
+                    placeholder="YYYY / MM / DD">
+                  <div class="error" data-error-for="dateOfRegistration"></div>
+                </div>
+
+                <div class="field">
+                  <label for="nationality">Nationality <span class="req">*</span></label>
+                  <select id="nationality" name="nationality">
+                    <option value="">Select Nationality</option>
+                    <option value="Ugandan">Ugandan</option>
+                    <option value="Kenyan">Kenyan</option>
+                    <option value="Tanzanian">Tanzanian</option>
+                    <option value="Burundian">Burundian</option>
+                    <option value="Rwandese">Rwandese</option>
+                    <option value="Somali">Somali</option>
+                    <option value="South Sudanese">South Sudanese</option>
+                  </select>
+                  <div class="error" data-error-for="nationality"></div>
+                </div>
+
+                <div class="field">
+                  <label for="maritalStatus">Marital status <span class="req">*</span></label>
+                  <select id="maritalStatus" name="maritalStatus">
+                    <option value="">Select Marital status</option>
+                    <option value="Single">Single</option>
+                    <option value="Married">Married</option>
+                    <option value="Divorced">Divorced</option>
+                    <option value="Widowed">Widowed</option>
+                    <option value="Separated">Separated</option>
+                  </select>
+                  <div class="error" data-error-for="maritalStatus"></div>
+                </div>
+
+                <div class="field">
+                  <label for="settlementCamp">Settlement camp <span class="req">*</span></label>
+                  <select id="settlementCamp" name="settlementCamp">
+                    <option value="">Select settlement camp</option>
+                    <option value="Gulu settlement camp">Gulu settlement camp</option>
+                    <option value="Arua settlement camp">Arua settlement camp</option>
+                    <option value="Mbarara settlement camp">Mbarara settlement camp</option>
+                    <option value="Kasese settlement camp">Kasese settlement camp</option>
+                    <option value="Busia settlement camp">Busia settlement camp</option>
+                    <option value="Mbale settlement camp">Mbale settlement camp</option>
+                    <option value="Kigezi settlement camp">Kigezi settlement camp</option>
+                  </select>
+                  <div class="error" data-error-for="settlementCamp"></div>
+                </div>
+
+                <div class="field">
+                  <label for="dateOfJoining">Date of joining Settlement camp <span class="req">*</span></label>
+                  <input
+                    id="dateOfJoining"
+                    name="dateOfJoining"
+                    type="date"
+                    placeholder="YYYY / MM / DD">
+                  <div class="error" data-error-for="dateOfJoining"></div>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button class="btn btn-primary form-submit" type="submit">Register</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js?v=2"></script>
+  </body>
+</html>
