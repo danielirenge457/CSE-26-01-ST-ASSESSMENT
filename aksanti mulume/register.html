@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register page</title>
+    <link rel="stylesheet" href="register.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <img class="logo" src="./fca-logo.jpg" alt="fca logo">
+        <h2>Refugee Support Program</h2>
+      </div>
+      <div class="right">
+        <h1>BENEFICIARY REGISTRATION FORM</h1>
+        <form id="beneficiaryForm">
+          <div class="row">
+            <div class="input-group">
+              <label>First Name*</label>
+              <input type="text" id="firstName" placeholder="Enter your first Name " required />
+            </div>
+         
+            <div class="input-group">
+              <label>last Name*</label>
+              <input type="text" id="lastName" placeholder="Enter your Last Name " required/>
+            </div>
+            </div>  
+            <div class="row">
+              <div class="input-group">
+                <label>Date of Birth*</label>
+                <input type="date" id="dateOfBirth" placeholder="Enter your date of birth " required />
+              </div>
+              <div class="input-group">
+                <label>Place of Birth*</label>
+                <input type="text" id="placeOfBirth" placeholder="Enter your place of birth " required/>
+              </div>
+              </div>
+              <div class="gender">
+                <label for="">Gender</label>
+                <div class="radio-group">
+                  <label for=""><input type="radio" name="gender" />Male</label>
+                  <label for=""><input type="radio" name="gender" />Female</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-group">
+                  <label for="">Nationality*</label>
+                  <select name="" id="nationality" required>
+                    <option value="">Select Nationality</option>
+                    <option value="">Ugandan</option>
+                    <option value="">Congolese</option>
+                    <option value="">Sudanese</option>
+                  </select>
+                 </div>
+                 <div class="input-group">
+                  <label for="">Marital status*</label>
+                  <select name="" id="maritalStatus" required>
+                    <option value="">Select Marital status</option>
+                    <option value="">Single</option>
+                    <option value="">Married</option>
+                    <option value="">Divorced</option>
+                  </select>
+                 </div>
+              </div>
+
+              <div class="row">
+                    <div class="input-group">
+                        <label for="">Settlement camp*</label>
+                        <select name="" id="settlementCamp" required>
+                            <option value="">Select Settlement camp</option>
+                            <option value="">Bidi bidi</option>
+                            <option value="">Nakivale</option>
+                            <option value="">Rhino camp</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="">Date of joining settlement camp</label>
+                        <input type="date" id="joinDate"  required>
+                    </div>
+              </div>
+
+              <button id="registerBtn" class="btn">register</button>
+      
+         </form>
+      </div>
+    </div>
+      <script>
+ const API = "http://localhost:3000/api/beneficiaries";
+const form = document.getElementById("beneficiaryForm");
+
+form.addEventListener("submit", async (e)=>{
+
+e.preventDefault();
+
+const gender = document.querySelector('input[name="gender"]:checked');
+
+const data = {
+
+firstName: document.getElementById("firstName").value,
+lastName: document.getElementById("lastName").value,
+dateOfBirth: document.getElementById("dateOfBirth").value,
+placeOfBirth: document.getElementById("placeOfBirth").value,
+gender: gender ? gender.value : "",
+nationality: document.getElementById("nationality").value,
+maritalStatus: document.getElementById("maritalStatus").value,
+settlementCamp: document.getElementById("settlementCamp").value,
+joinDate: document.getElementById("joinDate").value
+
+};
+
+await fetch(`${API}/register`,{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify(data)
+
+});
+
+// form.reset();
+
+})
+</script>
+  </body>
+</html>

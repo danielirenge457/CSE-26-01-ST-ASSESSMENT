@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+         <img class="logo" src="./fca-logo.jpg" alt="fca logo">
+         <h2>Refugee support Program </h2>
+       <button class="register-btn" id="addregisterBtn" >register</button>
+    </div>
+    <script>
+      const API_URL = "http://localhost:3000";
+      document.getElementById("addregisterBtn").addEventListener("click",function(){
+        window.location.href ="register.html";
+      })
+      
+    </script>
+</body>
+</html>

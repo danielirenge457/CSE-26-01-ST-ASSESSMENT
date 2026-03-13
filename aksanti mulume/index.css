@@ -1,0 +1,45 @@
+
+body{
+   margin: 0;
+   padding:0;
+   background-color:#95c11F ;
+   font-family: arial,sans-serif;
+  
+}
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.logo{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: white;
+    padding: 20px;
+    position: center;
+}
+h2{
+   color:white ;
+   margin-top: 20px;
+   font-weight: 400;
+   letter-spacing: 2px;
+
+}
+.register-btn{
+    margin-top: 30px;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 5px;
+    background: #7d7d7d;
+    font-size: 18px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+.register-btn:hover{
+    background: #ffffff;
+}

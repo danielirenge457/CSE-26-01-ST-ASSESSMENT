@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>FCA Beneficiary Registration</title>
+    <link rel="stylesheet" href="../css/register.css" />
+    <style>
+      #successMessage {
+        background-color: #1fac12;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="left-panel">
+        <div class="logo-circle"><img src="../images/fca-logo.jpg" alt="FCA Logo" /></div>
+
+        <h2>Refugee Support Program</h2>
+      </div>
+
+      <div class="right-panel">
+        <h1 class="title">BENEFICIARY REGISTRATION FORM</h1>
+
+        <div id="successMessage" class="success-message"></div>
+
+        <form id="registerForm">
+          <div class="row">
+            <div class="field">
+              <label>First Name *</label>
+              <input
+                type="text"
+                id="firstName"
+                placeholder="Enter your First name"
+              />
+              <small class="error-message"></small>
+            </div>
+
+            <div class="field">
+              <label>Last Name *</label>
+              <input
+                type="text"
+                id="lastName"
+                placeholder="Enter your Last name"
+              />
+              <small class="error-message"></small>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label>Date of birth *</label>
+              <input type="date" id="dob" />
+              <small class="error-message"></small>
+            </div>
+
+            <div class="field">
+              <label>Place of Birth *</label>
+              <input
+                type="text"
+                id="birthPlace"
+                placeholder="Enter your place of birth"
+              />
+              <small class="error-message"></small>
+            </div>
+          </div>
+
+          <div class="field" style="margin-bottom: 15px;">
+            <label>Gender *</label>
+
+            <div class="gender-box">
+              <label>
+                <input type="radio" name="gender" value="male" id="male" />
+                Male
+              </label>
+
+              <label>
+                <input type="radio" name="gender" value="female" id="female" />
+                Female
+              </label>
+            </div>
+            <small class="error-message"></small>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label>Nationality *</label>
+
+              <select id="nationality">
+                <option value="">Select Nationality</option>
+                <option>Ugandan</option>
+                <option>South Sudanese</option>
+                <option>Congolese</option>
+                <option>Somali</option>
+              </select>
+              <small class="error-message"></small>
+            </div>
+
+            <div class="field">
+              <label>Marital Status *</label>
+
+              <select id="marital">
+                <option value="">Select Marital status</option>
+                <option>Single</option>
+                <option>Married</option>
+                <option>Divorced</option>
+              </select>
+              <small class="error-message"></small>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label>Settlement Camp *</label>
+
+              <select id="camp">
+                <option value="">Select settlement camp</option>
+                <option>Bidi Bidi</option>
+                <option>Nakivale</option>
+                <option>Rhino Camp</option>
+              </select>
+              <small class="error-message"></small>
+            </div>
+
+            <div class="field">
+              <label>Date of Joining *</label>
+              <input type="date" id="joinDate" />
+              <small class="error-message"></small>
+            </div>
+          </div>
+
+          <button type="submit" id="registerBtn">Register</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="../js/register.js"></script>
+  </body>
+</html>
